@@ -1,0 +1,169 @@
+﻿{
+  "meta": {
+    "sourceOfTruth": ".NET/Full-Stack CV (YusifAslan_MammadovCVNR.pdf)",
+    "lastUpdated": "2026-07-19",
+    "notes": "Java experience is intentionally presented as a secondary/foundational skill. C#/.NET/ASP.NET Core is the primary professional identity for this portfolio."
+  },
+  "personal": {
+    "fullName": "Yusif Aslan Mammadov",
+    "headline": ".NET / Full-Stack Developer",
+    "location": "Wroclaw, Poland",
+    "relocation": "Open to relocation",
+    "workAuthorization": "Polish permanent residence permit — full right to work in Poland and the EU",
+    "email": "mamedovaslan562@gmail.com",
+    "phone": "+48 884 613 367",
+    "linkedin": "https://www.linkedin.com/in/yusif-aslan-mammadov-b67a01239/",
+    "github": "https://github.com/Yusif-Aslan",
+    "languagesSpoken": [
+      { "language": "Polish", "level": "C2 (Fluent)" },
+      { "language": "English", "level": "C1 (Fluent)" },
+      { "language": "Russian", "level": "Native (C2)" },
+      { "language": "Azerbaijani", "level": "Native" }
+    ]
+  },
+  "summary": "Computer Engineering Master's student and ambitious Software Developer focused on the Microsoft technology stack. Commercial experience building backend systems in ASP.NET Core and working within Agile/Scrum methodologies using Azure DevOps. Comfortable crossing the stack to build reactive front-end applications with Angular, React, and TypeScript. Strong advocate for software quality, backed by dedicated traineeship experience in unit and integration testing. Seeking a long-term role to grow into a foundational team member, leveraging modern .NET, cloud services, and clean code principles.",
+  "education": [
+    {
+      "degree": "Master of Science in Computer Engineering",
+      "status": "ongoing",
+      "institution": "Wrocław University of Science and Technology",
+      "startDate": "2025-10",
+      "endDate": null,
+      "coursework": ["Secure Systems and Networks", "Information Storage and Management", "Machine Learning"]
+    },
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "status": "completed",
+      "institution": "Wrocław University of Science and Technology",
+      "startDate": "2020-10",
+      "endDate": "2025-07",
+      "coursework": ["Data Structures and Algorithms", "Databases", "Software Engineering", "Advanced Web Technologies", "Programming on Microsoft Azure"]
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-akvelon",
+      "title": ".NET Developer Intern",
+      "company": "Akvelon",
+      "startDate": "2025-12",
+      "endDate": "2026-04",
+      "current": true,
+      "primaryStack": [".NET", "ASP.NET Core", "Azure", "Linux"],
+      "highlights": [
+        "Completed an intensive Mentorship Program focused on ASP.NET Core, Azure, Linux, and modern DevOps practices",
+        "Designed and delivered backend features in a fast-paced Agile/Scrum team",
+        "Used Git workflows, structured code reviews, and cloud-native concepts"
+      ]
+    },
+    {
+      "id": "exp-epam",
+      "title": ".NET Testing Trainee",
+      "company": "EPAM",
+      "startDate": "2025-01",
+      "endDate": "2025-04",
+      "current": false,
+      "primaryStack": [".NET", "Unit Testing", "Integration Testing"],
+      "highlights": [
+        "Specialized traineeship focused purely on software quality assurance",
+        "Engineered automated unit and integration tests for enterprise-level .NET systems",
+        "Internalized test-driven principles, validating complex application behavior under strict conditions"
+      ]
+    },
+    {
+      "id": "exp-nomtek",
+      "title": "Unity Developer Intern",
+      "company": "Nomtek, Wroclaw",
+      "startDate": "2023-07",
+      "endDate": "2023-10",
+      "current": false,
+      "primaryStack": ["C#", "Unity", "AR"],
+      "highlights": [
+        "Developed an AR application within a cross-functional Agile team",
+        "Optimized application performance using C#",
+        "Collaborated closely with Product Owners and non-technical stakeholders"
+      ]
+    }
+  ],
+  "skills": {
+    "primaryFocus": ["C#", ".NET 8 / .NET Core", "ASP.NET Core", "Entity Framework Core", "REST APIs", "CQRS", "Clean Architecture"],
+    "backendAndCloud": [
+      { "name": "C# / .NET 8 / Core", "weight": 95 },
+      { "name": "ASP.NET Core", "weight": 90 },
+      { "name": "Entity Framework Core", "weight": 85 },
+      { "name": "REST APIs / CQRS", "weight": 85 },
+      { "name": "Azure (Web Apps, SQL)", "weight": 75 },
+      { "name": "Clean Architecture", "weight": 80 }
+    ],
+    "frontend": [
+      { "name": "React", "weight": 75 },
+      { "name": "Angular", "weight": 75 },
+      { "name": "TypeScript / JavaScript", "weight": 80 },
+      { "name": "HTML / CSS", "weight": 80 },
+      { "name": "Blazor", "weight": 40, "note": "basics" }
+    ],
+    "testingAndTools": [
+      { "name": "Unit & Integration Testing", "weight": 80 },
+      { "name": "Azure DevOps / Git", "weight": 80 },
+      { "name": "SQL Server / Cosmos DB", "weight": 70 },
+      { "name": "Agile / Scrum", "weight": 85 }
+    ],
+    "secondary": [
+      { "name": "Java / Spring Boot", "weight": 55, "note": "Foundational OOP background; Spring Boot, Hibernate/JPA, Maven, JUnit, Mockito. Positioned as secondary to the C#/.NET stack." },
+      { "name": "Python", "weight": 40, "note": "Applied ML/data scripting (Scikit-learn, Pandas, XGBoost)" },
+      { "name": "PostgreSQL / MySQL", "weight": 60 }
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-infinity-bank",
+      "name": "Infinity Bank (Web Application)",
+      "year": "2025",
+      "stack": ["ASP.NET Core", "Entity Framework Core", "SQL Server", "CQRS", "Clean Architecture"],
+      "category": "backend",
+      "description": "Secure banking web application built with ASP.NET Core and Clean Architecture. Business logic structured with the CQRS pattern to keep calculations separated from infrastructure, with rigorous validation and mapping logic ensuring consistent, auditable transaction records.",
+      "link": null,
+      "flagshipProject": true
+    },
+    {
+      "id": "proj-restaurant-mgmt",
+      "name": "Full-Stack Restaurant Management System",
+      "year": "2025",
+      "stack": ["Spring Boot", "Angular", "TypeScript", "PostgreSQL", "JWT"],
+      "category": "full-stack",
+      "description": "Comprehensive restaurant operations web application with a reactive, component-based Angular/TypeScript frontend, secure JWT authentication, and an optimized relational database schema.",
+      "link": null,
+      "flagshipProject": true
+    },
+    {
+      "id": "proj-mastafit",
+      "name": "MastaFit (BSc Diploma Project)",
+      "year": "2024-2025",
+      "stack": ["React", "JavaScript", "HTML/CSS"],
+      "category": "frontend",
+      "description": "Responsive fitness-tracking frontend built as a Bachelor's diploma project, focused on modern UI/UX principles, component reusability, and seamless client-side state management.",
+      "link": "https://github.com/Yusif-Aslan/MastaFit",
+      "flagshipProject": false
+    },
+    {
+      "id": "proj-webmarket",
+      "name": "Webmarket Frontend",
+      "year": "2023",
+      "stack": ["Angular", "TypeScript", "HTML", "CSS"],
+      "category": "frontend",
+      "description": "Dynamic e-commerce frontend with reusable components and hand-tuned UI/UX for an interactive client-side shopping experience.",
+      "link": "https://github.com/Yusif-Aslan/WebmarketFE",
+      "flagshipProject": false
+    }
+  ],
+  "githubRepositories": [
+    { "name": "TiAutoQATest", "language": "C#", "note": "Automated QA/testing repo, reinforces .NET testing background" },
+    { "name": "Internet-Marketplace-app", "language": "TypeScript/Angular", "note": "Angular frontend for a marketplace app" },
+    { "name": "WebmarketFE", "language": "TypeScript", "note": "Matches the Webmarket Frontend CV project" },
+    { "name": "MastaFit", "language": "JavaScript", "note": "Matches the MastaFit diploma project" },
+    { "name": "DiscordMangaBot", "language": "Python", "note": "Personal side project, secondary to core stack" }
+  ],
+  "constraints": {
+    "doNotDiscuss": ["salary expectations", "visa sponsorship specifics beyond stated work authorization", "personal contact details beyond what is listed here", "opinions on other companies or candidates"],
+    "toneOfVoice": "expert, concise, professional, first-person as Yusif's avatar"
+  }
+}
