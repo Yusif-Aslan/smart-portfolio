@@ -19,14 +19,11 @@ interface StreamChunk {
 }
 
 interface SmartPortfolioChatProps {
-  /** Exact project names from cv.json, used to detect when the AI mentions one. */
   projectNames: string[];
-  /** Called with the exact project name whenever the assistant mentions it, to drive gallery highlighting. */
   onProjectMentioned?: (projectName: string) => void;
-  /** Optional suggested opening questions rendered as quick-reply chips. */
   suggestedQuestions?: string[];
 }
-const API_BASE_URL: string = "http://localhost:5138";
+const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:5138";
 
 
 const STREAM_ENDPOINT = `${API_BASE_URL}/api/portfolio/chat/stream`;

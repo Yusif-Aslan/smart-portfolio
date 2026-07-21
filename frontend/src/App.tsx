@@ -4,7 +4,7 @@ import SkillsPanel from "./components/SkillsPanel";
 import ProjectGallery from "./components/ProjectGallery";
 import type { CvProfile, EducationEntry, ExperienceEntry, PersonalInfo } from "./types";
 
-const API_BASE_URL: string = "http://localhost:5138";
+const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:5138";
 
 function Timeline({
                     experience,
