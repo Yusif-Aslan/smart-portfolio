@@ -23,7 +23,7 @@ interface SmartPortfolioChatProps {
   onProjectMentioned?: (projectName: string) => void;
   suggestedQuestions?: string[];
 }
-const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:5138";
+const API_BASE_URL: string = import.meta.env.VITE_API_URL ?? "http://localhost:5138";
 
 
 const STREAM_ENDPOINT = `${API_BASE_URL}/api/portfolio/chat/stream`;
