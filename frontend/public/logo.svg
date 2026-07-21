@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+    <defs>
+        <!-- Dark Slate Gradient Background -->
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b"/>
+            <stop offset="100%" stop-color="#0f172a"/>
+        </linearGradient>
+
+        <!-- Indigo Accent Gradient -->
+        <linearGradient id="primary" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#4f46e5"/>
+        </linearGradient>
+    </defs>
+
+    <!-- App Icon Base -->
+    <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+
+    <!-- Left Code Bracket -->
+    <path d="M 180 170 L 90 256 L 180 342" fill="none" stroke="#f8fafc" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Right Code Bracket -->
+    <path d="M 332 170 L 422 256 L 332 342" fill="none" stroke="#f8fafc" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Center Slash (Indigo) -->
+    <path d="M 290 130 L 222 382" fill="none" stroke="url(#primary)" stroke-width="44" stroke-linecap="round"/>
+
+    <!-- AI / Online Status Dot (Emerald) -->
+    <circle cx="390" cy="130" r="28" fill="#10b981"/>
+</svg>

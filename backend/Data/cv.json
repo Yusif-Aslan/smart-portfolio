@@ -1,8 +1,8 @@
 ﻿{
   "meta": {
     "sourceOfTruth": ".NET/Full-Stack CV (YusifAslan_MammadovCVNR.pdf)",
-    "lastUpdated": "2026-07-19",
-    "notes": "Java experience is intentionally presented as a secondary/foundational skill. C#/.NET/ASP.NET Core is the primary professional identity for this portfolio."
+    "lastUpdated": "2026-07-21",
+    "notes": "Java experience is intentionally presented as a secondary/foundational skill. C#/.NET/ASP.NET Core is the primary professional identity for this portfolio. Skill durations (years) reconciled from years-of-experience figures stated across all CV variants (CVJ, CVQ, CACV); where variants conflicted, the more conservative figure was kept."
   },
   "personal": {
     "fullName": "Yusif Aslan Mammadov",
@@ -29,7 +29,7 @@
       "institution": "Wrocław University of Science and Technology",
       "startDate": "2025-10",
       "endDate": null,
-      "coursework": ["Secure Systems and Networks", "Information Storage and Management", "Machine Learning"]
+      "coursework": ["Secure Systems and Networks", "Information Storage and Management", "Machine Learning", "Neural Networks", "Introduction to Computer Vision in Quality Control"]
     },
     {
       "degree": "Bachelor of Science in Computer Science",
@@ -37,7 +37,7 @@
       "institution": "Wrocław University of Science and Technology",
       "startDate": "2020-10",
       "endDate": "2025-07",
-      "coursework": ["Data Structures and Algorithms", "Databases", "Software Engineering", "Advanced Web Technologies", "Programming on Microsoft Azure"]
+      "coursework": ["Data Structures and Algorithms", "Databases", "Software Engineering", "Advanced Web Technologies", "Programming on Microsoft Azure", "Data Warehouses"]
     }
   ],
   "experience": [
@@ -87,60 +87,71 @@
   "skills": {
     "primaryFocus": ["C#", ".NET 8 / .NET Core", "ASP.NET Core", "Entity Framework Core", "REST APIs", "CQRS", "Clean Architecture"],
     "backendAndCloud": [
-      { "name": "C# / .NET 8 / Core", "weight": 95 },
-      { "name": "ASP.NET Core", "weight": 90 },
-      { "name": "Entity Framework Core", "weight": 85 },
-      { "name": "REST APIs / CQRS", "weight": 85 },
-      { "name": "Azure (Web Apps, SQL)", "weight": 75 },
-      { "name": "Clean Architecture", "weight": 80 }
+      { "name": "C# / .NET 8 / Core", "years": 2.5 },
+      { "name": "ASP.NET Core", "years": 1.5 },
+      { "name": "Entity Framework Core", "years": 1.5 },
+      { "name": "REST APIs / CQRS", "years": 2 },
+      { "name": "Azure", "years": 1 },
+      { "name": "Clean Architecture", "years": 1 }
     ],
     "frontend": [
-      { "name": "React", "weight": 75 },
-      { "name": "Angular", "weight": 75 },
-      { "name": "TypeScript / JavaScript", "weight": 80 },
-      { "name": "HTML / CSS", "weight": 80 },
-      { "name": "Blazor", "weight": 40, "note": "basics" }
+      { "name": "React", "years": 2 },
+      { "name": "Angular", "years": 2 },
+      { "name": "TypeScript / JavaScript", "years": 2 },
+      { "name": "HTML / CSS", "years": 3 },
+      { "name": "Blazor", "years": 0.25, "note": "basics" }
     ],
     "testingAndTools": [
-      { "name": "Unit & Integration Testing", "weight": 80 },
-      { "name": "Azure DevOps / Git", "weight": 80 },
-      { "name": "SQL Server / Cosmos DB", "weight": 70 },
-      { "name": "Agile / Scrum", "weight": 85 }
+      { "name": "Unit & Integration Testing", "years": 1 },
+      { "name": "Git", "years": 3 },
+      { "name": "SQL Server / Cosmos DB", "years": 2 },
+      { "name": "Agile / Scrum", "years": 1.5 }
     ],
     "secondary": [
-      { "name": "Java / Spring Boot", "weight": 55, "note": "Foundational OOP background; Spring Boot, Hibernate/JPA, Maven, JUnit, Mockito. Positioned as secondary to the C#/.NET stack." },
-      { "name": "Python", "weight": 40, "note": "Applied ML/data scripting (Scikit-learn, Pandas, XGBoost)" },
-      { "name": "PostgreSQL / MySQL", "weight": 60 }
+      { "name": "Java / Spring Boot", "years": 2, "note": "Foundational OOP background; Spring Boot (~1 yr), Hibernate/JPA, Maven, JUnit, Mockito." },
+      { "name": "Python", "years": 2, "note": "Applied ML/data scripting (Scikit-learn, Pandas, XGBoost, PyTest)" },
+      { "name": "PostgreSQL / MySQL", "years": 2 }
     ]
   },
   "projects": [
     {
       "id": "proj-infinity-bank",
       "name": "Infinity Bank (Web Application)",
-      "year": "2025",
-      "stack": ["ASP.NET Core", "Entity Framework Core", "SQL Server", "CQRS", "Clean Architecture"],
+      "year": "2025 – present",
+      "stack": ["ASP.NET Core", "Entity Framework Core", "SQL Server", "CQRS", "Repository Pattern", "JWT", "FluentValidation", "Clean Architecture"],
       "category": "backend",
-      "description": "Secure banking web application built with ASP.NET Core and Clean Architecture. Business logic structured with the CQRS pattern to keep calculations separated from infrastructure, with rigorous validation and mapping logic ensuring consistent, auditable transaction records.",
+      "description": "Secure banking web application built with ASP.NET Core and Clean Architecture. Business logic structured with the CQRS and generic Repository patterns to keep calculations separated from infrastructure, with a Result-based error handling model, JWT authentication, an email verification flow, and rigorous FluentValidation-based request validation ensuring consistent, auditable transaction records.",
       "link": null,
       "flagshipProject": true
     },
     {
       "id": "proj-restaurant-mgmt",
       "name": "Full-Stack Restaurant Management System",
+      "alternateName": "Full-Stack Sushi Management System",
       "year": "2025",
-      "stack": ["Spring Boot", "Angular", "TypeScript", "PostgreSQL", "JWT"],
+      "stack": ["Spring Boot", "Angular", "TypeScript", "PostgreSQL", "JWT", "Hibernate/JPA", "Maven", "JUnit", "Mockito", "OpenAPI"],
       "category": "full-stack",
-      "description": "Comprehensive restaurant operations web application with a reactive, component-based Angular/TypeScript frontend, secure JWT authentication, and an optimized relational database schema.",
+      "description": "Comprehensive restaurant/food-service operations web application (presented under two working names across CV variants). Reactive, component-based Angular/TypeScript frontend backed by a Spring Boot REST API, JWT authentication, JPA/Hibernate entity mapping, an optimized PostgreSQL schema tuned for high-concurrency order processing, and JUnit/Mockito unit tests validating business logic.",
       "link": null,
       "flagshipProject": true
     },
     {
+      "id": "proj-customer-loss-prediction",
+      "name": "Customer Loss Prediction",
+      "year": "2025",
+      "stack": ["Python", "Scikit-learn", "XGBoost", "Pandas", "PyTest"],
+      "category": "data-ml",
+      "description": "Independent self-learning project applying software engineering rigor to a data problem: built reproducible, testable data pipelines comparing seven machine learning classifiers on a real-world dataset (~17,000 records), with an emphasis on structured, modular code design and automated data validation.",
+      "link": null,
+      "flagshipProject": false
+    },
+    {
       "id": "proj-mastafit",
       "name": "MastaFit (BSc Diploma Project)",
-      "year": "2024-2025",
-      "stack": ["React", "JavaScript", "HTML/CSS"],
+      "year": "2024 – 2025",
+      "stack": ["React", "JavaScript", "HTML/CSS", "Netlify"],
       "category": "frontend",
-      "description": "Responsive fitness-tracking frontend built as a Bachelor's diploma project, focused on modern UI/UX principles, component reusability, and seamless client-side state management.",
+      "description": "Responsive fitness-tracking frontend built as a Bachelor's diploma project, focused on modern UI/UX principles, component reusability, and seamless client-side state management. Deployed to production via Netlify.",
       "link": "https://github.com/Yusif-Aslan/MastaFit",
       "flagshipProject": false
     },
@@ -150,13 +161,33 @@
       "year": "2023",
       "stack": ["Angular", "TypeScript", "HTML", "CSS"],
       "category": "frontend",
-      "description": "Dynamic e-commerce frontend with reusable components and hand-tuned UI/UX for an interactive client-side shopping experience.",
+      "description": "Dynamic e-commerce frontend with reusable, componentized UI and hand-tuned UI/UX for an interactive client-side shopping experience.",
       "link": "https://github.com/Yusif-Aslan/WebmarketFE",
+      "flagshipProject": false
+    },
+    {
+      "id": "proj-internet-marketplace",
+      "name": "Internet Marketplace App",
+      "year": null,
+      "stack": ["Angular", "TypeScript"],
+      "category": "frontend",
+      "description": "Angular frontend for a marketplace-style web application, built as a personal project to deepen component-based architecture and state management skills outside of coursework.",
+      "link": "https://github.com/Yusif-Aslan/Internet-Marketplace-app",
+      "flagshipProject": false
+    },
+
+    {
+      "id": "proj-discordmangabot",
+      "name": "DiscordMangaBot",
+      "year": null,
+      "stack": ["Python", "Discord API"],
+      "category": "Bot",
+      "description": "Personal side project: a Discord bot for manga-related lookups and notifications, secondary to the core .NET/full-stack focus but demonstrating range in Python scripting and third-party API integration.",
+      "link": "https://github.com/Yusif-Aslan/DiscordMangaBot",
       "flagshipProject": false
     }
   ],
   "githubRepositories": [
-    { "name": "TiAutoQATest", "language": "C#", "note": "Automated QA/testing repo, reinforces .NET testing background" },
     { "name": "Internet-Marketplace-app", "language": "TypeScript/Angular", "note": "Angular frontend for a marketplace app" },
     { "name": "WebmarketFE", "language": "TypeScript", "note": "Matches the Webmarket Frontend CV project" },
     { "name": "MastaFit", "language": "JavaScript", "note": "Matches the MastaFit diploma project" },

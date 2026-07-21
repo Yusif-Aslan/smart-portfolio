@@ -41,24 +41,25 @@ public sealed record ExperienceEntry(
     [property: JsonPropertyName("highlights")] List<string> Highlights
 );
 
-public sealed record WeightedSkill(
+public sealed record ExperienceSkill(
     [property: JsonPropertyName("name")] string Name,
-    [property: JsonPropertyName("weight")] int Weight,
+    [property: JsonPropertyName("years")] double Years,
     [property: JsonPropertyName("note")] string? Note
 );
 
 public sealed record SkillsData(
     [property: JsonPropertyName("primaryFocus")] List<string> PrimaryFocus,
-    [property: JsonPropertyName("backendAndCloud")] List<WeightedSkill> BackendAndCloud,
-    [property: JsonPropertyName("frontend")] List<WeightedSkill> Frontend,
-    [property: JsonPropertyName("testingAndTools")] List<WeightedSkill> TestingAndTools,
-    [property: JsonPropertyName("secondary")] List<WeightedSkill> Secondary
+    [property: JsonPropertyName("backendAndCloud")] List<ExperienceSkill> BackendAndCloud,
+    [property: JsonPropertyName("frontend")] List<ExperienceSkill> Frontend,
+    [property: JsonPropertyName("testingAndTools")] List<ExperienceSkill> TestingAndTools,
+    [property: JsonPropertyName("secondary")] List<ExperienceSkill> Secondary
 );
 
 public sealed record ProjectEntry(
     [property: JsonPropertyName("id")] string Id,
     [property: JsonPropertyName("name")] string Name,
-    [property: JsonPropertyName("year")] string Year,
+    [property: JsonPropertyName("alternateName")] string? AlternateName,
+    [property: JsonPropertyName("year")] string? Year,
     [property: JsonPropertyName("stack")] List<string> Stack,
     [property: JsonPropertyName("category")] string Category,
     [property: JsonPropertyName("description")] string Description,
@@ -91,9 +92,9 @@ public sealed record CvProfile(
 public interface IPortfolioContextService
 {
     CvProfile Profile { get; }
-    
+
     string RawProfileJson { get; }
-    
+
     string BuildSystemPrompt(string userMessage);
 }
 
@@ -142,7 +143,6 @@ public sealed class PortfolioContextService : IPortfolioContextService
 
     public string BuildSystemPrompt(string userMessage)
     {
-
         return SystemPromptTemplate.Replace("{{RAG_CONTEXT}}", _compactProfileJson, StringComparison.Ordinal);
     }
 
@@ -162,11 +162,14 @@ public sealed class PortfolioContextService : IPortfolioContextService
         2. Keep answers concise and structured — recruiters are scanning, not reading essays. Prefer 2-4 sentences
            or short bullet points over long paragraphs.
         3. When referencing a specific project, use its exact "name" field from the context so the UI can highlight it.
-        4. If asked about years of experience, describe it honestly in terms of internships, traineeships, and
+           If a project has an "alternateName", either is a valid way to refer to it.
+        4. Skill durations in the context are expressed in years (a value under 1, like 0.5, means 6 months).
+           Speak about them naturally ("about a year and a half with ASP.NET Core") rather than reciting the raw number.
+        5. If asked about years of experience, describe it honestly in terms of internships, traineeships, and
            academic projects — do not fabricate a specific "X years" figure that isn't in the context.
-        5. Java, Python, and other secondary tools may be mentioned when directly asked, but always frame C#/.NET
+        6. Java, Python, and other secondary tools may be mentioned when directly asked, but always frame C#/.NET
            as the primary specialization.
-        6. If a question isn't covered by the context, say so honestly and redirect to a topic you can speak to.
+        7. If a question isn't covered by the context, say so honestly and redirect to a topic you can speak to.
 
         # TOPICS TO DECLINE OR REDIRECT
         - Salary/compensation expectations: suggest discussing this directly with Yusif via the contact details in context.
