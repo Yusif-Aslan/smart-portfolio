@@ -25,28 +25,16 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(CorsPolicyName, policy =>
     {
-        if (configuredOrigins.Length > 0)
+        // Production Vercel URL explicitly allowed alongside any configuration
+        var allowedOrigins = new List<string>(configuredOrigins)
         {
-            policy.WithOrigins(configuredOrigins)
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
-        }
-        else
-        {
-            policy.SetIsOriginAllowed(origin =>
-                {
-                    if (!Uri.TryCreate(origin, UriKind.Absolute, out var uri))
-                    {
-                        return false;
-                    }
+            "https://aslan-smartportfolio.vercel.app"
+        };
 
-                    return uri.Host is "localhost" or "127.0.0.1";
-                })
-                .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
-        }
+        policy.WithOrigins(allowedOrigins.ToArray())
+            .SetIsOriginAllowedToAllowWildcardSubdomains()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
     });
 });
 
