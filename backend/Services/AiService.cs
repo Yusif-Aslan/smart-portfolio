@@ -47,6 +47,18 @@ public sealed class AiService : IAiService
         _options = options.Value;
         _logger = logger;
 
+        // DIAGNOSTIC LOGGING
+        if (string.IsNullOrWhiteSpace(_options.ApiKey))
+        {
+            _logger.LogError("CRITICAL: Groq API key is missing or empty during initialization.");
+        }
+        else
+        {
+            var prefix = _options.ApiKey.Length > 4 ? _options.ApiKey[..4] : "???";
+            _logger.LogInformation("Groq API key loaded successfully! Length: {Length}, Prefix: {Prefix}...", 
+                _options.ApiKey.Length, prefix);
+        }
+
         if (_httpClient.BaseAddress is null)
         {
             _httpClient.BaseAddress = new Uri(_options.BaseUrl);
