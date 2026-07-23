@@ -28,7 +28,7 @@ builder.Services.AddCors(options =>
         // Production Vercel URL explicitly allowed alongside any configuration
         var allowedOrigins = new List<string>(configuredOrigins)
         {
-            "https://aslan-smartportfolio.vercel.app"
+            "https://smartportfolio-yusif-aslan.vercel.app"
         };
 
         policy.WithOrigins(allowedOrigins.ToArray())
