@@ -54,7 +54,7 @@ export default function SmartPortfolioChat({
             id: createId(),
             role: "assistant",
             content:
-                "Hi, I'm Yusif's AI avatar. Ask me anything about my **.NET/full-stack IT traineeships**, automated testing stack (xUnit, Selenium), practical coding projects, or academic background.",
+                "Hi, I'm Yusif-Aslan's AI avatar. Ask me anything about my **overall software development experience**, tech stack, practical engineering projects, or education."
         },
     ]);
     const [input, setInput] = useState("");
@@ -197,7 +197,7 @@ export default function SmartPortfolioChat({
                     </div>
                     <div>
                         <h2 className="text-sm font-semibold tracking-wide text-white">
-                            Yusif&apos;s AI Copilot
+                            Yusif-Aslan&apos;s AI Assistant
                         </h2>
                         <p className="text-xs text-slate-400">Grounded in verified traineeship &amp; CV data</p>
                     </div>
