@@ -19,6 +19,10 @@ RUN dotnet publish "SmartPortfolio.Api.csproj" -c Release -o /app/publish /p:Use
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
+
+# Disable file watching to prevent inotify exhaustion in Linux containers
+ENV DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE=false
 ENV ASPNETCORE_HTTP_PORTS=8080
 EXPOSE 8080
+
 ENTRYPOINT ["dotnet", "SmartPortfolio.Api.dll"]
