@@ -23,6 +23,7 @@ interface SmartPortfolioChatProps {
     projectNames: string[];
     onProjectMentioned?: (projectName: string) => void;
     suggestedQuestions?: string[];
+    onClose?: () => void;
 }
 
 const API_BASE_URL: string = import.meta.env.VITE_API_URL ?? "http://localhost:5138";
@@ -46,6 +47,7 @@ export default function SmartPortfolioChat({
                                                projectNames,
                                                onProjectMentioned,
                                                suggestedQuestions = DEFAULT_SUGGESTIONS,
+                                               onClose,
                                            }: SmartPortfolioChatProps) {
     const [messages, setMessages] = useState<ChatMessage[]>([
         {
@@ -200,10 +202,26 @@ export default function SmartPortfolioChat({
                         <p className="text-xs text-slate-400">Grounded in verified traineeship &amp; CV data</p>
                     </div>
                 </div>
-                <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[11px] font-medium text-emerald-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          Online
-        </span>
+
+                <div className="flex items-center gap-2">
+          <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[11px] font-medium text-emerald-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Online
+          </span>
+                    {onClose && (
+                        <button
+                            onClick={onClose}
+                            type="button"
+                            className="flex h-7 w-7 items-center justify-center rounded-lg border border-slate-700 bg-slate-800 text-slate-400 transition hover:bg-slate-700 hover:text-white lg:hidden"
+                            title="Minimize Chat"
+                            aria-label="Minimize Chat"
+                        >
+                            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    )}
+                </div>
             </div>
 
             {/* Message List — 60% Dominant Dark Background */}
